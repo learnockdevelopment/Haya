@@ -38,8 +38,10 @@ export const viewport = {
 
 export default function RootLayout({
   children,
+  // modal
 }: {
   children: React.ReactNode;
+  // modal: React.ReactNode;
 }) {
   return (
     <html lang="en" dir="ltr" >
@@ -52,6 +54,8 @@ export default function RootLayout({
             </main>
             <Footer />
           </div>
+              {/* Render modal above everything */}
+          {/* {modal} */}
           <Toaster
             position="top-right"
             toastOptions={{

@@ -87,38 +87,42 @@ const LoginPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      {/* Right side: Form */}
+      <div className=" w-full max-w-md mx-auto space-y-8">
+        <h2 className="text-xl md:text-3xl lg:text-4xl font-marck font-bold  mb-2 md:mb-4 text-primary-500 text-center rounded-full px-3 py-1 md:px-4 md:py-2">
+          {t("auth.welcomeBack")}!
+        </h2>
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            {t('auth.login')}
+            {t("auth.login")}
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            {t('auth.dontHaveAccount')}{' '}
+            {t("auth.dontHaveAccount")}{" "}
             <Link
               href="/register"
               className="font-medium text-blue-600 hover:text-blue-500"
             >
-              {t('auth.register')}
+              {t("auth.register")}
             </Link>
           </p>
         </div>
         <form className="mt-8 space-y-6 form-container" onSubmit={handleSubmit}>
           <div className="space-y-4">
             <Input
-              label={t('auth.email')}
+              label={t("auth.email")}
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               error={errors.email}
               leftIcon={<FiMail className="w-5 h-5 text-gray-400" />}
-              placeholder={t('auth.email')}
+              placeholder={t("auth.email")}
               required
             />
             <Input
-              label={t('auth.password')}
-              type={showPassword ? 'text' : 'password'}
+              label={t("auth.password")}
+              type={showPassword ? "text" : "password"}
               name="password"
               value={formData.password}
               onChange={handleChange}
@@ -137,7 +141,7 @@ const LoginPage: React.FC = () => {
                   )}
                 </button>
               }
-              placeholder={t('auth.password')}
+              placeholder={t("auth.password")}
               required
             />
           </div>
@@ -150,14 +154,20 @@ const LoginPage: React.FC = () => {
                 type="checkbox"
                 className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
               />
-              <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                {t('auth.rememberMe')}
+              <label
+                htmlFor="remember-me"
+                className="ml-2 block text-sm text-gray-900"
+              >
+                {t("auth.rememberMe")}
               </label>
             </div>
 
             <div className="text-sm">
-              <a href="#" className="font-medium text-blue-600 hover:text-blue-500">
-                {t('auth.forgotPassword')}
+              <a
+                href="#"
+                className="font-medium text-blue-600 hover:text-blue-500"
+              >
+                {t("auth.forgotPassword")}
               </a>
             </div>
           </div>
@@ -169,10 +179,18 @@ const LoginPage: React.FC = () => {
               loading={isLoading}
               disabled={isLoading}
             >
-              {t('auth.login')}
+              {t("auth.login")}
             </Button>
           </div>
         </form>
+      </div>
+      {/* Left side: Image */}
+      <div className="hidden md:flex  items-center  h-full">
+        <img
+          src="/images/login.png" // Change to your image path
+          alt="Login Side"
+          className=" w-full max-w-3xl h-auto object-cover rounded-xl shadow-lg"
+        />
       </div>
     </div>
   );

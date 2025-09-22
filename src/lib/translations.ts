@@ -62,7 +62,7 @@ export const translations = {
     'auth.dontHaveAccount': "Don't have an account?",
     'auth.signInWith': 'Sign in with',
     'auth.signUpWith': 'Sign up with',
-    
+    'auth.welcomeBack': 'Welcome back',
     // Profile
     'profile.title': 'Profile',
     'profile.subtitle': 'Manage your personal information',
