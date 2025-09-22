@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useMultilingual } from '@/hooks/useMultilingual';
 import Button from '@/components/ui/Button';
-import { FiStar, FiClock, FiMapPin, FiUsers } from 'react-icons/fi';
+import { FiStar, FiClock, FiMapPin, FiUsers,FiArrowRight } from 'react-icons/fi';
 
 interface Tour {
   _id: string;
@@ -93,7 +93,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, className = '' }) => {
   return (
     <div className={`bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden ${className}`}>
       {/* Image */}
-      <div className="relative h-48 w-full">
+      <div className="relative h-64 w-full rounded-3xl overflow-hidden">
         <Image
           src={tour.featuredImage || '/images/placeholder-tour.jpg'}
           alt={getText(tour.title)}
@@ -105,7 +105,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, className = '' }) => {
             -{tour.discountPercentage}%
           </div>
         )}
-        <div className="absolute top-3 right-3">
+        {/* <div className="absolute top-3 right-3">
           <span className={`px-2 py-1 rounded-full text-xs font-medium ${getCategoryColor(tour.category)}`}>
             {tour.category}
           </span>
@@ -114,29 +114,29 @@ const TourCard: React.FC<TourCardProps> = ({ tour, className = '' }) => {
           <span className={`px-2 py-1 rounded-full text-xs font-medium ${getDifficultyColor(tour.difficulty)}`}>
             {tour.difficulty}
           </span>
-        </div>
+        </div> */}
       </div>
 
       {/* Content */}
       <div className="p-4">
         {/* Location */}
-        <div className="flex items-center text-gray-600 text-sm mb-2">
+        {/* <div className="flex items-center text-gray-600 text-sm mb-2">
           <FiMapPin className="w-4 h-4 mr-1" />
           <span>{tour.location || tour.city || 'N/A'}, {tour.country || 'N/A'}</span>
-        </div>
+        </div> */}
 
         {/* Title */}
-        <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+        <h3 className="text-3xl font-semibold text-gray-950 mb-3 line-clamp-2">
           {getText(tour.title)}
         </h3>
 
         {/* Description */}
-        <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+        <p className="text-text-950 text-lg mb-3 line-clamp-2">
           {getText(tour.shortDescription)}
         </p>
 
         {/* Highlights */}
-        {tour.highlights && getArray(tour.highlights).length > 0 && (
+        {/* {tour.highlights && getArray(tour.highlights).length > 0 && (
           <div className="mb-3">
             <div className="flex flex-wrap gap-1">
               {getArray(tour.highlights).slice(0, 2).map((highlight, index) => (
@@ -154,7 +154,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, className = '' }) => {
               )}
             </div>
           </div>
-        )}
+        )} */}
 
         {/* Rating and Reviews */}
         <div className="flex items-center justify-between mb-3">
@@ -169,42 +169,40 @@ const TourCard: React.FC<TourCardProps> = ({ tour, className = '' }) => {
               ({tour.ratings?.count || 0} {t('home.reviews')})
             </span>
           </div>
-          <div className="flex items-center text-gray-600 text-sm">
+          {/* <div className="flex items-center text-gray-600 text-sm">
             <FiUsers className="w-4 h-4 mr-1" />
             <span>Max {tour.maxGroupSize || 0}</span>
-          </div>
+          </div> */}
         </div>
 
         {/* Duration */}
-        <div className="flex items-center text-gray-600 text-sm mb-4">
+        {/* <div className="flex items-center text-gray-600 text-sm mb-4">
           <FiClock className="w-4 h-4 mr-1" />
           <span>{tour.duration ? `${tour.duration} days` : 'N/A'}</span>
-        </div>
+        </div> */}
 
         {/* Price and Actions */}
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <span className="text-2xl font-bold text-primary-600">
-              ${tour.price || 0}
+              {tour.price || 0} EGP
             </span>
             {tour.actualPrice && tour.actualPrice > (tour.price || 0) && (
               <span className="ml-2 text-sm text-gray-500 line-through">
-                ${tour.actualPrice}
+                {tour.actualPrice} EGP
               </span>
             )}
-            <span className="ml-1 text-sm text-gray-600">
-              {t('home.from')}
-            </span>
+            
           </div>
           <div className="flex space-x-2">
             <Link href={`/tours/${tour.slug}`}>
-              <Button variant="outline" size="sm">
-                {t('home.learnMore')}
+              <Button variant="outline" size="sm" className='inline-flex items-center justify-center px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-full transition-colors duration-200'>
+              {t('home.bookNow')}
+              <FiArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <Button size="sm">
-              {t('home.bookNow')}
-            </Button>
+            {/* <Button size="sm">
+            </Button> */}
           </div>
         </div>
       </div>

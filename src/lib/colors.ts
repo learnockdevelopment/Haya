@@ -2,7 +2,7 @@
  * Haya Design System - Color Palette
  * 
  * This file contains all the colors used in the Haya application.
- * Update these values to match your Figma design system.
+ * Updated to match the provided color palette from design files.
  * 
  * Usage:
  * - Import specific colors: import { colors } from '@/lib/colors'
@@ -11,129 +11,150 @@
  */
 
 export const colors = {
-  // Primary Colors - Main brand colors
+  // Primary Colors - Main brand colors (from palette 1)
   primary: {
-    50: '#eff6ff',   // Lightest primary
-    100: '#dbeafe',  // Very light primary
-    200: '#bfdbfe',  // Light primary
-    300: '#93c5fd',  // Medium light primary
-    400: '#60a5fa',  // Medium primary
-    500: '#3b82f6',  // Base primary (main brand color)
-    600: '#2563eb',  // Medium dark primary
-    700: '#1d4ed8',  // Dark primary
-    800: '#1e40af',  // Very dark primary
-    900: '#1e3a8a',  // Darkest primary
-    950: '#172554',  // Ultra dark primary
+    50: '#f2f8f2',
+    100: '#e6f1e6',
+    200: '#bfddc0',
+    300: '#99c899',
+    400: '#4d9f4d',
+    500: '#09650A', // Base primary (from palette 1)
+    600: '#085b09',
+    700: '#074c08',
+    800: '#053d06',
+    900: '#043105',
+    950: '#032104',
   },
 
-  // Secondary Colors - Supporting brand colors
+  // Secondary Colors - Supporting brand colors (from palette 1)
   secondary: {
-    50: '#f8fafc',   // Lightest secondary
-    100: '#f1f5f9',  // Very light secondary
-    200: '#e2e8f0',  // Light secondary
-    300: '#cbd5e1',  // Medium light secondary
-    400: '#94a3b8',  // Medium secondary
-    500: '#64748b',  // Base secondary
-    600: '#475569',  // Medium dark secondary
-    700: '#334155',  // Dark secondary
-    800: '#1e293b',  // Very dark secondary
-    900: '#0f172a',  // Darkest secondary
-    950: '#020617',  // Ultra dark secondary
+    50: '#fbf8eb',
+    100: '#f7f1d7',
+    200: '#eadca4',
+    300: '#ddc771',
+    400: '#c49e2a',
+    500: '#77911E', // Base secondary (from palette 1)
+    600: '#6b831b',
+    700: '#596d17',
+    800: '#475712',
+    900: '#3a470f',
+    950: '#2d380c',
   },
+
+  // Warning Colors - Warning states (from palette 1)
+  warning: {
+    50: '#ffe5e5',
+    100: '#ffcccc',
+    200: '#ff9999',
+    300: '#ff6666',
+    400: '#ff3333',
+    500: '#790000', // Base warning (from palette 1)
+    600: '#6d0000',
+    700: '#5a0000',
+    800: '#480000',
+    900: '#3b0000',
+    950: '#2e0000',
+  },
+
+  // Text Colors - Text colors (from palette 1)
+  text: {
+    50: '#f5f4f4',
+    100: '#ebe9e9',
+    200: '#cec9c9',
+    300: '#b0a8a8',
+    400: '#756767',
+    500: '#332323', // Base text (from palette 1)
+    600: '#2e2020',
+    700: '#261a1a',
+    800: '#1e1515',
+    900: '#191111',
+    950: '#140d0d',
+  },
+
+  // Additional colors from palette 2
+  mainText: '#333333',
+  lightText: '#808080',
+  background: '#FFFFFF',
+  buttons: '#17973F',
+  attention: '#F7921E',
 
   // Accent Colors - Highlight and call-to-action colors
   accent: {
-    50: '#fef2f2',   // Lightest accent
-    100: '#fee2e2',  // Very light accent
-    200: '#fecaca',  // Light accent
-    300: '#fca5a5',  // Medium light accent
-    400: '#f87171',  // Medium accent
-    500: '#ef4444',  // Base accent (main accent color)
-    600: '#dc2626',  // Medium dark accent
-    700: '#b91c1c',  // Dark accent
-    800: '#991b1b',  // Very dark accent
-    900: '#7f1d1d',  // Darkest accent
-    950: '#450a0a',  // Ultra dark accent
+    50: '#fef2f2',
+    100: '#fee2e2',
+    200: '#fecaca',
+    300: '#fca5a5',
+    400: '#f87171',
+    500: '#ef4444',
+    600: '#dc2626',
+    700: '#b91c1c',
+    800: '#991b1b',
+    900: '#7f1d1d',
+    950: '#450a0a',
   },
 
   // Success Colors - Success states and positive actions
   success: {
-    50: '#f0fdf4',   // Lightest success
-    100: '#dcfce7',  // Very light success
-    200: '#bbf7d0',  // Light success
-    300: '#86efac',  // Medium light success
-    400: '#4ade80',  // Medium success
-    500: '#22c55e',  // Base success
-    600: '#16a34a',  // Medium dark success
-    700: '#15803d',  // Dark success
-    800: '#166534',  // Very dark success
-    900: '#14532d',  // Darkest success
-    950: '#052e16',  // Ultra dark success
-  },
-
-  // Warning Colors - Warning states and caution
-  warning: {
-    50: '#fffbeb',   // Lightest warning
-    100: '#fef3c7',  // Very light warning
-    200: '#fde68a',  // Light warning
-    300: '#fcd34d',  // Medium light warning
-    400: '#fbbf24',  // Medium warning
-    500: '#f59e0b',  // Base warning
-    600: '#d97706',  // Medium dark warning
-    700: '#b45309',  // Dark warning
-    800: '#92400e',  // Very dark warning
-    900: '#78350f',  // Darkest warning
-    950: '#451a03',  // Ultra dark warning
+    50: '#f0fdf4',
+    100: '#dcfce7',
+    200: '#bbf7d0',
+    300: '#86efac',
+    400: '#4ade80',
+    500: '#22c55e',
+    600: '#16a34a',
+    700: '#15803d',
+    800: '#166534',
+    900: '#14532d',
+    950: '#052e16',
   },
 
   // Error Colors - Error states and negative actions
   error: {
-    50: '#fef2f2',   // Lightest error
-    100: '#fee2e2',  // Very light error
-    200: '#fecaca',  // Light error
-    300: '#fca5a5',  // Medium light error
-    400: '#f87171',  // Medium error
-    500: '#ef4444',  // Base error
-    600: '#dc2626',  // Medium dark error
-    700: '#b91c1c',  // Dark error
-    800: '#991b1b',  // Very dark error
-    900: '#7f1d1d',  // Darkest error
-    950: '#450a0a',  // Ultra dark error
+    50: '#fef2f2',
+    100: '#fee2e2',
+    200: '#fecaca',
+    300: '#fca5a5',
+    400: '#f87171',
+    500: '#ef4444',
+    600: '#dc2626',
+    700: '#b91c1c',
+    800: '#991b1b',
+    900: '#7f1d1d',
+    950: '#450a0a',
   },
 
   // Info Colors - Information states
   info: {
-    50: '#eff6ff',   // Lightest info
-    100: '#dbeafe',  // Very light info
-    200: '#bfdbfe',  // Light info
-    300: '#93c5fd',  // Medium light info
-    400: '#60a5fa',  // Medium info
-    500: '#3b82f6',  // Base info
-    600: '#2563eb',  // Medium dark info
-    700: '#1d4ed8',  // Dark info
-    800: '#1e40af',  // Very dark info
-    900: '#1e3a8a',  // Darkest info
-    950: '#172554',  // Ultra dark info
+    50: '#eff6ff',
+    100: '#dbeafe',
+    200: '#bfdbfe',
+    300: '#93c5fd',
+    400: '#60a5fa',
+    500: '#3b82f6',
+    600: '#2563eb',
+    700: '#1d4ed8',
+    800: '#1e40af',
+    900: '#1e3a8a',
+    950: '#172554',
   },
 
   // Neutral Colors - Grays and base colors
   neutral: {
-    50: '#fafafa',   // Lightest neutral
-    100: '#f5f5f5',  // Very light neutral
-    200: '#e5e5e5',  // Light neutral
-    300: '#d4d4d4',  // Medium light neutral
-    400: '#a3a3a3',  // Medium neutral
-    500: '#737373',  // Base neutral
-    600: '#525252',  // Medium dark neutral
-    700: '#404040',  // Dark neutral
-    800: '#262626',  // Very dark neutral
-    900: '#171717',  // Darkest neutral
-    950: '#0a0a0a',  // Ultra dark neutral
+    50: '#fafafa',
+    100: '#f5f5f5',
+    200: '#e5e5e5',
+    300: '#d4d4d4',
+    400: '#a3a3a3',
+    500: '#737373',
+    600: '#525252',
+    700: '#404040',
+    800: '#262626',
+    900: '#171717',
+    950: '#0a0a0a',
   },
 
   // Special Colors - Unique brand colors
   special: {
-    // Gold/Yellow for highlights
     gold: {
       50: '#fffbeb',
       100: '#fef3c7',
@@ -146,7 +167,6 @@ export const colors = {
       800: '#92400e',
       900: '#78350f',
     },
-    // Purple for special elements
     purple: {
       50: '#faf5ff',
       100: '#f3e8ff',
@@ -159,7 +179,6 @@ export const colors = {
       800: '#6b21a8',
       900: '#581c87',
     },
-    // Teal for accents
     teal: {
       50: '#f0fdfa',
       100: '#ccfbf1',
@@ -177,55 +196,52 @@ export const colors = {
   // Semantic Colors - Context-specific colors
   semantic: {
     background: {
-      primary: '#ffffff',     // Main background
-      secondary: '#f8fafc',   // Secondary background
-      tertiary: '#f1f5f9',    // Tertiary background
-      dark: '#0f172a',        // Dark background
+      primary: '#ffffff',
+      secondary: '#f8fafc',
+      tertiary: '#f1f5f9',
+      dark: '#0f172a',
     },
     text: {
-      primary: '#0f172a',     // Main text
-      secondary: '#64748b',   // Secondary text
-      tertiary: '#94a3b8',    // Tertiary text
-      inverse: '#ffffff',     // Inverse text (on dark)
-      muted: '#cbd5e1',       // Muted text
+      primary: '#333333', // Using mainText from palette 2
+      secondary: '#808080', // Using lightText from palette 2
+      tertiary: '#94a3b8',
+      inverse: '#ffffff',
+      muted: '#cbd5e1',
     },
     border: {
-      primary: '#e2e8f0',     // Main border
-      secondary: '#cbd5e1',   // Secondary border
-      focus: '#3b82f6',       // Focus border
-      error: '#ef4444',       // Error border
+      primary: '#e2e8f0',
+      secondary: '#cbd5e1',
+      focus: '#3b82f6',
+      error: '#ef4444',
     },
   },
 
   // Status Colors - UI state colors
   status: {
-    online: '#22c55e',        // Online status
-    offline: '#94a3b8',       // Offline status
-    away: '#f59e0b',          // Away status
-    busy: '#ef4444',          // Busy status
+    online: '#22c55e',
+    offline: '#94a3b8',
+    away: '#f59e0b',
+    busy: '#ef4444',
   },
 
   // Overlay Colors - For modals, overlays, etc.
   overlay: {
-    light: 'rgba(0, 0, 0, 0.1)',    // Light overlay
-    medium: 'rgba(0, 0, 0, 0.5)',   // Medium overlay
-    dark: 'rgba(0, 0, 0, 0.8)',     // Dark overlay
+    light: 'rgba(0, 0, 0, 0.1)',
+    medium: 'rgba(0, 0, 0, 0.5)',
+    dark: 'rgba(0, 0, 0, 0.8)',
   },
 } as const;
 
 // Color utility functions
 export const colorUtils = {
-  // Get color with opacity
   withOpacity: (color: string, opacity: number) => {
     return `${color}${Math.round(opacity * 255).toString(16).padStart(2, '0')}`;
   },
 
-  // Get color from semantic name
   getSemanticColor: (category: keyof typeof colors.semantic, variant: string) => {
     return colors.semantic[category][variant as keyof typeof colors.semantic[typeof category]];
   },
 
-  // Get color from palette
   getColor: (palette: keyof typeof colors, shade: string | number) => {
     const paletteColors = colors[palette] as Record<string, string>;
     return paletteColors[shade.toString()];
@@ -238,7 +254,7 @@ export const {
   secondary,
   accent,
   success,
-  warning,
+  warning: warningColors,
   error,
   info,
   neutral,
@@ -250,4 +266,3 @@ export const {
 
 // Default export
 export default colors;
-

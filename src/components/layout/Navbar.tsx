@@ -21,16 +21,16 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
+    <nav className="bg-white shadow-[0_4px_20px_rgba(23,151,63,1)] sticky top-0 z-50 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-auto py-4">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <img 
                 src="/logo.svg" 
                 alt="Haya Travel" 
-                className="h-8 w-auto"
+                className="h-16 w-auto"
               />
             </Link>
           </div>
@@ -40,28 +40,40 @@ const Navbar: React.FC = () => {
             <div className="ml-10 flex items-baseline space-x-4">
               <Link
                 href="/"
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium transition-colors"
               >
                 {t('nav.home')}
               </Link>
               <Link
                 href="/about"
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium transition-colors"
               >
                 {t('nav.about')}
               </Link>
               <Link
+                href="/services"
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium transition-colors"
+              >
+                {t('nav.services')}
+              </Link>
+              <Link
                 href="/contact"
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium transition-colors"
               >
                 {t('nav.contact')}
               </Link>
               <Link
+                href="/packages"
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium transition-colors"
+              >
+                {t('nav.packages')}
+              </Link>
+              {/* <Link
                 href="/colors"
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium transition-colors"
               >
                 Colors
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -123,9 +135,9 @@ const Navbar: React.FC = () => {
                   </Button>
                 </Link>
                 <Link href="/register">
-                  <Button size="sm">
+                  <button  className="bg-[#F7921E] text-sm leading-4 rounded-full px-6 py-3 hover:bg-[#F7921E]/80 ">
                     {t('nav.register')}
-                  </Button>
+                  </button>
                 </Link>
               </div>
             )}

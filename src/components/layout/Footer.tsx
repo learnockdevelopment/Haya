@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { FiGithub, FiTwitter, FiLinkedin, FiMail } from 'react-icons/fi';
+import { FiGithub, FiTwitter, FiLinkedin, FiMail, FiMapPin, FiPhone, FiMail as FiEmail } from 'react-icons/fi';
 
 const Footer: React.FC = () => {
   const { t, isRTL } = useLanguage();
@@ -21,10 +21,12 @@ const Footer: React.FC = () => {
                 className="h-10 w-auto"
               />
             </div>
-            <p className="text-gray-300 mb-4 max-w-md">
-              {t('home.subtitle')}
+            <p className="text-gray-300 mb-6 max-w-md">
+              {t('footer.tagline', 'Your trusted partner for visa applications. Making travel dreams come true for Sudanese travelers worldwide.')}
             </p>
-            <div className="flex space-x-4">
+            
+            {/* Social Links */}
+            <div className="flex space-x-4 mb-6">
               <a
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -54,74 +56,138 @@ const Footer: React.FC = () => {
                 <FiMail className="w-6 h-6" />
               </a>
             </div>
+
+            {/* Contact Info */}
+            <div className="space-y-2">
+              <div className="flex items-center text-gray-300">
+                <FiMapPin className="w-4 h-4 mr-3" />
+                <span>{t('footer.address', 'Street 15, Block 23, New Extension, Khartoum, Sudan')}</span>
+              </div>
+              <div className="flex items-center text-gray-300">
+                <FiPhone className="w-4 h-4 mr-3" />
+                <span>{t('footer.phone', '+249 123.456 789')}</span>
+              </div>
+              <div className="flex items-center text-gray-300">
+                <FiEmail className="w-4 h-4 mr-3" />
+                <span>{t('footer.email', 'info@haya-travel.com')}</span>
+              </div>
+            </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Visa Services */}
           <div>
-            <h4 className='text-lg font-semibold mb-4'>{t('footer.quickLinks')}</h4>
+            <h4 className='text-lg font-semibold mb-4'>{t('footer.visaServices', 'Visa Services')}</h4>
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/"
+                  href="/visas/tourist"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  {t('nav.home')}
+                  {t('footer.touristVisas', 'Tourist Visas')}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/visas/business"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  {t('nav.about')}
+                  {t('footer.businessVisas', 'Business Visas')}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="/visas/student"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  {t('nav.contact')}
+                  {t('footer.studentVisas', 'Student Visas')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/visas/work"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  {t('footer.workVisas', 'Work Visas')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/visas/religious"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  {t('footer.religiousVisas', 'Religious Visas')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/visas/express"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  {t('footer.expressVisas', 'Express Visas')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/visas/express-processing"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  {t('footer.expressProcessing', 'Express Processing')}
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Quick Links */}
           <div>
-            <h4 className='text-lg font-semibold mb-4'>{t('footer.support')}</h4>
+            <h4 className='text-lg font-semibold mb-4'>{t('footer.quickLinks', 'Quick Links')}</h4>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/about"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  {t('footer.helpCenter')}
-                </a>
+                  {t('footer.aboutUs', 'About Us')}
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/how-it-works"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  {t('footer.documentation')}
-                </a>
+                  {t('footer.howItWorks', 'How It Works')}
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/pricing"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  {t('footer.apiReference')}
-                </a>
+                  {t('footer.pricing', 'Pricing')}
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/faq"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  {t('footer.contactSupport')}
-                </a>
+                  {t('footer.faq', 'FAQ')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blogs"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  {t('footer.blogs', 'Blogs')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy-policy"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  {t('footer.privacyPolicy', 'Privacy Policy')}
+                </Link>
               </li>
             </ul>
           </div>
@@ -131,27 +197,27 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Haya. {t('footer.copyright')}
+              © {new Date().getFullYear()} Haya Travel. {t('footer.copyright', 'All rights reserved.')}
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a
-                href="#"
+              <Link
+                href="/privacy-policy"
                 className="text-gray-400 hover:text-white text-sm transition-colors"
               >
-                {t('footer.privacyPolicy')}
-              </a>
-              <a
-                href="#"
+                {t('footer.privacyPolicy', 'Privacy Policy')}
+              </Link>
+              <Link
+                href="/terms-of-service"
                 className="text-gray-400 hover:text-white text-sm transition-colors"
               >
-                {t('footer.termsOfService')}
-              </a>
-              <a
-                href="#"
+                {t('footer.termsOfService', 'Terms of Service')}
+              </Link>
+              <Link
+                href="/cookie-policy"
                 className="text-gray-400 hover:text-white text-sm transition-colors"
               >
-                {t('footer.cookiePolicy')}
-              </a>
+                {t('footer.cookiePolicy', 'Cookie Policy')}
+              </Link>
             </div>
           </div>
         </div>

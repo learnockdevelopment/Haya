@@ -10,18 +10,27 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Primary brand colors
+        // Primary brand colors (from palette 1)
         primary: colors.primary,
         
-        // Secondary brand colors
+        // Secondary brand colors (from palette 1)
         secondary: colors.secondary,
         
-        // Accent colors
-        accent: colors.accent,
+        // Warning colors (from palette 1)
+        warning: colors.warning,
+        
+        // Text colors (from palette 1)
+        text: colors.text,
+        
+        // Additional colors from palette 2
+        'main-text': colors.mainText,
+        'light-text': colors.lightText,
+        background: colors.background,
+        buttons: colors.buttons,
+        attention: colors.attention,
         
         // Status colors
         success: colors.success,
-        warning: colors.warning,
         error: colors.error,
         info: colors.info,
         
@@ -34,9 +43,7 @@ module.exports = {
         teal: colors.special.teal,
         
         // Semantic colors
-        background: colors.semantic.background,
-        text: colors.semantic.text,
-        border: colors.semantic.border,
+        semantic: colors.semantic,
         
         // Status colors
         status: colors.status,
@@ -46,7 +53,12 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        'Marck-Script': ['"Marck Script"', 'cursive'],
         arabic: ['Noto Sans Arabic', 'system-ui', 'sans-serif'],
+                marck: ["var(--font-marck-script)", "cursive"],
+                        manrope: ["var(--font-manrope)", "sans-serif"],
+
+
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

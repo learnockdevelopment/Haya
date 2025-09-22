@@ -3,27 +3,32 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { FiUsers, FiTarget, FiAward, FiHeart } from 'react-icons/fi';
+import WhyChoose from '@/components/ui/whyChoose';
+import Start from '@/components/ui/Start';
 
 const AboutPage: React.FC = () => {
   const { t } = useLanguage();
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-purple-700 text-white py-20">
+      <section className="bg-[url(/images/Frame.png)] text-text-950 py-20 min-h-[80vh] bg-cover bg-center flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               {t('about.title')}
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
+            {/* <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
               {t('about.subtitle')}
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
-
+      {/* why choose section */ }
+      <section>
+        <WhyChoose />
+      </section>
       {/* Mission Section */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -76,66 +81,71 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
         </div>
+      </section> */}
+      {/* start section */}
+      <section>
+        <Start />
       </section>
-
       {/* Values Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              {t('about.values')}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              {t('about.valuesSubtitle')}
-            </p>
-          </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <div className='h-12 w-44 bg-primary-600 rounded-full mx-auto mb-6'>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FiHeart className="w-8 h-8 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{t('about.passion')}</h3>
-              <p className="text-gray-600">
-                {t('about.passionText')}
-              </p>
-            </div>
+      </div>
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Work It Works Step by Step
+      </h2>
+      <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        Follow these simple steps to plan your journey.
+      </p>
+    </div>
 
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FiTarget className="w-8 h-8 text-green-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{t('about.focus')}</h3>
-              <p className="text-gray-600">
-                {t('about.focusText')}
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FiUsers className="w-8 h-8 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{t('about.collaboration')}</h3>
-              <p className="text-gray-600">
-                {t('about.collaborationText')}
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FiAward className="w-8 h-8 text-red-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{t('about.quality')}</h3>
-              <p className="text-gray-600">
-                {t('about.qualityText')}
-              </p>
-            </div>
-          </div>
+    {/* Steps */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      {/* Step 1 */}
+      <div className="text-center">
+        <div className="  rounded-full flex items-center justify-center mx-auto mb-6">
+          <img src="/images/img1about.png" alt="Select Destination" className="w-32 h-24" />
         </div>
-      </section>
+        <h3 className="text-xl font-semibold text-green-700 mb-3">Select Destination</h3>
+        <p className="text-gray-600">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua quis nostrud exercitation ullamco.
+        </p>
+      </div>
+
+      {/* Step 2 */}
+      <div className="text-center">
+        <div className=" rounded-full flex items-center justify-center mx-auto mb-6">
+          <img src="/images/img2about.svg" alt="Make an Appointment" className="w-32 h-24" />
+        </div>
+        <h3 className="text-xl font-semibold text-green-700 mb-3">Make an Appointment</h3>
+        <p className="text-gray-600">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua quis nostrud exercitation ullamco.
+        </p>
+      </div>
+
+      {/* Step 3 */}
+      <div className="text-center">
+        <div className="  rounded-full flex items-center justify-center mx-auto mb-6">
+          <img src="/images/img3about.svg" alt="Enjoy our tour" className="w-32 h-24" />
+        </div>
+        <h3 className="text-xl font-semibold text-green-700 mb-3">Enjoy our tour</h3>
+        <p className="text-gray-600">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua quis nostrud exercitation ullamco.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Technology Section */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -181,10 +191,10 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-600">
+      {/* <section className="py-20 bg-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {t('about.ctaTitle')}
@@ -207,7 +217,7 @@ const AboutPage: React.FC = () => {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
