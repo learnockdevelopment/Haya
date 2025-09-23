@@ -9,7 +9,9 @@ import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import { FiMail, FiLock, FiEye, FiEyeOff } from 'react-icons/fi';
-
+import { FaApple } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa";
 const LoginPage: React.FC = () => {
   const [formData, setFormData] = useState({
     email: '',
@@ -95,22 +97,25 @@ const LoginPage: React.FC = () => {
         </h2>
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            {t("auth.login")}
+            <span className='text-[#F7921E]'>“</span>{t("auth.login")}<span className='text-[#F7921E]'>”</span>
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            {t("auth.dontHaveAccount")}{" "}
-            <Link
-              href="/register"
-              className="font-medium text-blue-600 hover:text-blue-500"
-            >
-              {t("auth.register")}
-            </Link>
-          </p>
+          
         </div>
+        <div className="flex justify-center space-x-4 p-4">
+  <button className="w-16 h-16 rounded-full bg-[#f7f7f7] flex items-center justify-center border ">
+    <FaApple className="text-black text-2xl" />
+  </button>
+  <button className="w-16 h-16 rounded-full bg-[#f7f7f7] flex items-center justify-center border ">
+    <FcGoogle className=" text-2xl" />
+  </button>
+  <button className="w-16 h-16 rounded-full bg-[#f7f7f7] flex items-center justify-center border ">
+    <FaFacebook className="text-black text-2xl" />
+  </button>
+</div>
         <form className="mt-8 space-y-6 form-container" onSubmit={handleSubmit}>
           <div className="space-y-4">
             <Input
-              label={t("auth.email")}
+              // label={t("auth.email")}
               type="email"
               name="email"
               value={formData.email}
@@ -119,9 +124,10 @@ const LoginPage: React.FC = () => {
               leftIcon={<FiMail className="w-5 h-5 text-gray-400" />}
               placeholder={t("auth.email")}
               required
+              className="!text-text-600 !bg-[#f7f7f7] !rounded-full !py-4 px-4"
             />
             <Input
-              label={t("auth.password")}
+              // label={t("auth.password")}
               type={showPassword ? "text" : "password"}
               name="password"
               value={formData.password}
@@ -143,6 +149,8 @@ const LoginPage: React.FC = () => {
               }
               placeholder={t("auth.password")}
               required
+              className="!text-text-600 !bg-[#f7f7f7] !rounded-full !py-4 px-4"
+
             />
           </div>
 
@@ -165,7 +173,7 @@ const LoginPage: React.FC = () => {
             <div className="text-sm">
               <a
                 href="#"
-                className="font-medium text-blue-600 hover:text-blue-500"
+                className="font-medium text-text-600 hover:text-blue-500"
               >
                 {t("auth.forgotPassword")}
               </a>
@@ -175,7 +183,7 @@ const LoginPage: React.FC = () => {
           <div>
             <Button
               type="submit"
-              className="w-full"
+              className="w-full bg-[#17973F] rounded-full py-3 font-bold"
               loading={isLoading}
               disabled={isLoading}
             >
@@ -183,6 +191,15 @@ const LoginPage: React.FC = () => {
             </Button>
           </div>
         </form>
+        <p className="mt-2 text-center text-sm text-gray-600">
+            {t("auth.dontHaveAccount")}{" "}
+            <Link
+              href="/register"
+              className="font-bold text-text-800 hover:text-blue-500"
+            >
+              {t("auth.register")}
+            </Link>
+          </p>
       </div>
       {/* Left side: Image */}
       <div className="hidden md:flex  items-center  h-full">

@@ -9,6 +9,9 @@ import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import { FiMail, FiLock, FiUser, FiEye, FiEyeOff } from 'react-icons/fi';
+import { FaApple } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa";
 
 const RegisterPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -113,60 +116,67 @@ const RegisterPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      {/* Right side: Form */}
+      <div className="w-full max-w-md mx-auto space-y-8">
+        <h2 className="text-xl md:text-3xl lg:text-4xl font-marck font-bold mb-2 md:mb-4 text-primary-500 text-center rounded-full px-3 py-1 md:px-4 md:py-2">
+          {t("auth.register")}!
+        </h2>
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            {t('auth.register')}
+            <span className='text-[#F7921E]'>“</span>{t("auth.join")}<span className='text-[#F7921E]'>”</span>
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            {t('auth.alreadyHaveAccount')}{' '}
-            <Link
-              href="/login"
-              className="font-medium text-blue-600 hover:text-blue-500"
-            >
-              {t('auth.login')}
-            </Link>
-          </p>
         </div>
+        
+        <div className="flex justify-center space-x-4 p-4">
+          <button className="w-16 h-16 rounded-full bg-[#f7f7f7] flex items-center justify-center border">
+            <FaApple className="text-black text-2xl" />
+          </button>
+          <button className="w-16 h-16 rounded-full bg-[#f7f7f7] flex items-center justify-center border">
+            <FcGoogle className="text-2xl" />
+          </button>
+          <button className="w-16 h-16 rounded-full bg-[#f7f7f7] flex items-center justify-center border">
+            <FaFacebook className="text-black text-2xl" />
+          </button>
+        </div>
+        
         <form className="mt-8 space-y-6 form-container" onSubmit={handleSubmit}>
           <div className="space-y-4">
             <Input
-              label={t('auth.fullName')}
               type="text"
               name="fullName"
               value={formData.fullName}
               onChange={handleChange}
               error={errors.fullName}
               leftIcon={<FiUser className="w-5 h-5 text-gray-400" />}
-              placeholder={t('auth.fullName')}
+              placeholder={t("auth.fullName")}
               required
+              className="!text-text-600 !bg-[#f7f7f7] !rounded-full !py-4 px-4"
             />
             <Input
-              label={t('auth.userName')}
               type="text"
               name="userName"
               value={formData.userName}
               onChange={handleChange}
               error={errors.userName}
               leftIcon={<FiUser className="w-5 h-5 text-gray-400" />}
-              placeholder={t('auth.userName')}
+              placeholder={t("auth.userName")}
               required
+              className="!text-text-600 !bg-[#f7f7f7] !rounded-full !py-4 px-4"
             />
             <Input
-              label={t('auth.email')}
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               error={errors.email}
               leftIcon={<FiMail className="w-5 h-5 text-gray-400" />}
-              placeholder={t('auth.email')}
+              placeholder={t("auth.email")}
               required
+              className="!text-text-600 !bg-[#f7f7f7] !rounded-full !py-4 px-4"
             />
             <Input
-              label={t('auth.password')}
-              type={showPassword ? 'text' : 'password'}
+              type={showPassword ? "text" : "password"}
               name="password"
               value={formData.password}
               onChange={handleChange}
@@ -185,12 +195,12 @@ const RegisterPage: React.FC = () => {
                   )}
                 </button>
               }
-              placeholder={t('auth.password')}
+              placeholder={t("auth.password")}
               required
+              className="!text-text-600 !bg-[#f7f7f7] !rounded-full !py-4 px-4"
             />
             <Input
-              label={t('auth.confirmPassword')}
-              type={showConfirmPassword ? 'text' : 'password'}
+              type={showConfirmPassword ? "text" : "password"}
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
@@ -209,8 +219,9 @@ const RegisterPage: React.FC = () => {
                   )}
                 </button>
               }
-              placeholder={t('auth.confirmPassword')}
+              placeholder={t("auth.confirmPassword")}
               required
+              className="!text-text-600 !bg-[#f7f7f7] !rounded-full !py-4 px-4"
             />
           </div>
 
@@ -237,14 +248,33 @@ const RegisterPage: React.FC = () => {
           <div>
             <Button
               type="submit"
-              className="w-full"
+              className="w-full bg-[#17973F] rounded-full py-3 font-bold"
               loading={isLoading}
               disabled={isLoading}
             >
-              {t('auth.register')}
+              {t("auth.register")}
             </Button>
           </div>
         </form>
+        
+        <p className="mt-2 text-center text-sm text-gray-600">
+          {t("auth.alreadyHaveAccount")}{" "}
+          <Link
+            href="/login"
+            className="font-bold text-text-800 hover:text-blue-500"
+          >
+            {t("auth.login")}
+          </Link>
+        </p>
+      </div>
+      
+      {/* Left side: Image */}
+      <div className="hidden md:flex items-center h-full">
+        <img
+          src="/images/register.png" // Using the same image as login page
+          alt="Register Side"
+          className="w-full max-w-3xl h-auto object-cover rounded-xl shadow-lg"
+        />
       </div>
     </div>
   );

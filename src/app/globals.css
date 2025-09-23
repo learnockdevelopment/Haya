@@ -321,9 +321,9 @@ input[type="tel"],
 input[type="url"],
 input[type="date"],
 textarea {
-  color: #111827 !important; /* text-gray-900 */
-  background-color: #ffffff !important; /* bg-white */
-  border: 1px solid #d1d5db !important; /* border-gray-300 */
+  color: #111827 ; /* text-gray-900 */
+  background-color: #ffffff ; /* bg-white */
+  border: 1px solid #d1d5db ; /* border-gray-300 */
 }
 
 input[type="text"]:focus,
@@ -333,11 +333,11 @@ input[type="tel"]:focus,
 input[type="url"]:focus,
 input[type="date"]:focus,
 textarea:focus {
-  color: #111827 !important; /* text-gray-900 */
-  background-color: #ffffff !important; /* bg-white */
-  border-color: #3b82f6 !important; /* border-blue-500 */
-  outline: none !important;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+  color: #111827 ; /* text-gray-900 */
+  background-color: #ffffff ; /* bg-white */
+  border-color: #3b82f6 ; /* border-blue-500 */
+  outline: none ;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) ;
 }
 
 input[type="text"]:disabled,
@@ -347,9 +347,9 @@ input[type="tel"]:disabled,
 input[type="url"]:disabled,
 input[type="date"]:disabled,
 textarea:disabled {
-  color: #6b7280 !important; /* text-gray-500 */
-  background-color: #f3f4f6 !important; /* bg-gray-100 */
-  border-color: #d1d5db !important; /* border-gray-300 */
+  color: #6b7280 ; /* text-gray-500 */
+  background-color: #f3f4f6 ; /* bg-gray-100 */
+  border-color: #d1d5db ; /* border-gray-300 */
 }
 
 input[type="text"]::placeholder,
@@ -359,19 +359,19 @@ input[type="tel"]::placeholder,
 input[type="url"]::placeholder,
 input[type="date"]::placeholder,
 textarea::placeholder {
-  color: #9ca3af !important; /* text-gray-400 */
+  color: #9ca3af ; /* text-gray-400 */
 }
 
 /* Override any inherited text color for form elements */
 .form-container input,
 .form-container textarea {
-  color: #111827 !important;
+  color: #111827 ;
 }
 
 /* Ensure input text is always visible regardless of theme */
 input, textarea {
-  color: #111827 !important;
-  background-color: #ffffff !important;
+  color: #111827 ;
+  background-color: #ffffff ;
 }
 
 /* Password toggle button styles */

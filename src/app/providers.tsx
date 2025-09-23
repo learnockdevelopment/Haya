@@ -6,6 +6,10 @@ import { AuthProvider } from '@/contexts/AuthContext';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { useState } from 'react';
 
+// import new providers
+import { HotelsProvider } from '@/contexts/Hotelscontext';
+import { FilterProvider } from '@/contexts/HotelsFilterContext';
+
 export function Providers({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(
     () =>
@@ -23,7 +27,13 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
         <LanguageProvider>
-          <AuthProvider>{children}</AuthProvider>
+          <AuthProvider>
+            <HotelsProvider>
+              <FilterProvider>
+                {children}
+              </FilterProvider>
+            </HotelsProvider>
+          </AuthProvider>
         </LanguageProvider>
       </ThemeProvider>
     </QueryClientProvider>

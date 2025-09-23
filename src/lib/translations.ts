@@ -39,8 +39,9 @@ export const translations = {
     'nav.adminPanel': 'Admin Panel',
     
     // Authentication
-    'auth.login': 'Login',
-    'auth.register': 'Register',
+    'auth.login': 'Log in to continue your journey.',
+    'auth.register': 'Create Your Account',
+    'auth.join':'Join us today to explore the best hotels, flights, and travel deals.',
     'auth.email': 'Email',
     'auth.password': 'Password',
     'auth.fullName': 'Full Name',
@@ -130,7 +131,7 @@ export const translations = {
     'home.whyChooseUs.moreAboutButton':'More About Us',
     'home.whyChooseUs.callUs':'Call Us',
     'home.whyChooseUs.badge':'Get To Know Our Agency',
-
+    'home.top_destinations':'Top Destination',
     // New Home Page Sections
     'home.popularTours': 'Popular Tours',
     'home.popularToursSubtitle': 'Most Popular Tours',
@@ -347,19 +348,15 @@ export const translations = {
     "footer.religiousVisas": "Religious Visas",
     "footer.expressVisas": "Express Visas",
     "footer.expressProcessing": "Express Processing",
-    "footer.quickLinks": "Quick Links",
     "footer.aboutUs": "About Us",
     "footer.howItWorks": "How It Works",
     "footer.pricing": "Pricing",
     "footer.faq": "FAQ",
     "footer.blogs": "Blogs",
-    "footer.privacyPolicy": "Privacy Policy",
     "footer.address": "Street 15, Block 23, New Extension, Khartoum, Sudan",
     "footer.phone": "+249 123.456 789",
     "footer.email": "info@haya-travel.com",
-    "footer.copyright": "All rights reserved.",
-    "footer.termsOfService": "Terms of Service",
-    "footer.cookiePolicy": "Cookie Policy",
+   
 
     // Colors Page
     'colors.title': 'Haya Color System',

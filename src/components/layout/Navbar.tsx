@@ -6,14 +6,16 @@ import { useAuth } from '@/contexts/AuthContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Button from '@/components/ui/Button';
 import LanguageDropdown from '@/components/ui/LanguageDropdown';
-import { FiMenu, FiX, FiUser, FiLogOut, FiSettings, FiShield } from 'react-icons/fi';
+import { FiMenu, FiX, FiUser, FiLogOut, FiSettings, FiShield, FiChevronDown } from 'react-icons/fi';
 
 const Navbar: React.FC = () => {
   const { user, logout } = useAuth();
   const { t, isRTL } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleServices = () => setIsServicesOpen(!isServicesOpen);
 
   const handleLogout = () => {
     logout();
@@ -50,12 +52,41 @@ const Navbar: React.FC = () => {
               >
                 {t('nav.about')}
               </Link>
-              <Link
-                href="/services"
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium transition-colors"
-              >
-                {t('nav.services')}
-              </Link>
+              
+              {/* Services Dropdown */}
+              <div className="relative group">
+                <button
+                  onClick={toggleServices}
+                  className="flex items-center text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium transition-colors"
+                >
+                  {t('nav.services')}
+                  <FiChevronDown className={`ml-1 w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <div className={`absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10 border border-gray-200 ${isServicesOpen ? 'block' : 'hidden'} group-hover:block`}>
+                  <Link
+                    href="/services/visa"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    onClick={() => setIsServicesOpen(false)}
+                  >
+                    Visa Services
+                  </Link>
+                  <Link
+                    href="/services/flights"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    onClick={() => setIsServicesOpen(false)}
+                  >
+                    Flight Booking
+                  </Link>
+                  <Link
+                    href="/services/hotels"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    onClick={() => setIsServicesOpen(false)}
+                  >
+                    Hotel Reservations
+                  </Link>
+                </div>
+              </div>
+
               <Link
                 href="/contact"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium transition-colors"
@@ -68,12 +99,6 @@ const Navbar: React.FC = () => {
               >
                 {t('nav.packages')}
               </Link>
-              {/* <Link
-                href="/colors"
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium transition-colors"
-              >
-                Colors
-              </Link> */}
             </div>
           </div>
 
@@ -174,6 +199,50 @@ const Navbar: React.FC = () => {
             >
               {t('nav.about')}
             </Link>
+            
+            {/* Mobile Services Dropdown */}
+            <div className="border-l-2 border-gray-200 ml-3 pl-2">
+              <button
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+                className="flex items-center justify-between w-full text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium"
+              >
+                {t('nav.services')}
+                <FiChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              <div className={`ml-4 ${isServicesOpen ? 'block' : 'hidden'}`}>
+                <Link
+                  href="/services/visa"
+                  className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-sm font-medium"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsServicesOpen(false);
+                  }}
+                >
+                  Visa 
+                </Link>
+                <Link
+                  href="/services/flights"
+                  className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-sm font-medium"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsServicesOpen(false);
+                  }}
+                >
+                  Flights
+                </Link>
+                <Link
+                  href="/services/hotels"
+                  className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-sm font-medium"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsServicesOpen(false);
+                  }}
+                >
+                  Hotels
+                </Link>
+              </div>
+            </div>
+
             <Link
               href="/contact"
               className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium"
@@ -182,11 +251,11 @@ const Navbar: React.FC = () => {
               {t('nav.contact')}
             </Link>
             <Link
-              href="/colors"
+              href="/packages"
               className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
-              Colors
+              {t('nav.packages')}
             </Link>
             {user ? (
               <>
