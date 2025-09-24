@@ -87,18 +87,18 @@ const Navbar: React.FC = () => {
                 </div>
               </div>
 
-              <Link
+              {/* <Link
                 href="/contact"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium transition-colors"
               >
                 {t('nav.contact')}
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 href="/packages"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium transition-colors"
               >
                 {t('nav.packages')}
-              </Link>
+              </Link> */}
             </div>
           </div>
 

@@ -1,0 +1,24 @@
+ 
+    'heba_title' => 'Heba Nour',
+    'heba_subtitle' => 'Educational Background: Bachelor\'s Degree in Mass Communication – Cairo University',
+    'heba_feature1' => ' A structured and progressive curriculum that starts from the basics and advances to professional levels, making it suitable for both beginners and those with prior experience.',
+    'heba_feature2' => ' A strong focus on practical application — the teaching goes beyond theory and is reinforced with real-world examples and direct practice on charts, which significantly accelerates understanding and comprehension.',
+    'heba_feature3' => ' Continuous follow-up and support for trainees, as the academy ensures timely responses to their questions and tracks their progress step by step. This creates a sense of ongoing support and helps learners achieve real, tangible results.',
+    
+    'nour_title' => 'Nour Mohamed Al-Ansary',
+    'nour_subtitle' => 'Educational Background: Bachelor of Specific Education – Assiut University',
+    'nour_feature1' => ' iTrend Academy provides an accredited certificate from the Arab League, awarded to students upon successfully completing their educational program. This certificate is the first of its kind in the Arab world and represents the culmination of a comprehensive and intensive learning journey.',
+    'nour_feature2' => ' The academy offers full technical support to its students through a dedicated email address, live chats, and direct communication with academy representatives — ensuring the best service and continuous support at all times.',
+    'nour_feature3' => ' As part of its educational strategy, iTrend Academy provides market analysis and trading recommendations as an essential service. This feature delivers a practical and well-rounded learning experience, relying on professional analysis of major financial instruments, including currencies and stocks.',
+    
+    'mohamed_hassan_title' => 'Mohamed Hassan',
+    'mohamed_hassan_subtitle' => 'Occupation: Electrical Engineer',
+    'mohamed_hassan_feature1' => ' Strong and impactful educational content.',
+    'mohamed_hassan_feature2' => ' Continuous follow-up and ongoing student support.',
+    'mohamed_hassan_feature3' => ' Regular updates to the educational material, tailored to students\' understanding and the latest developments in the trading world.',
+    
+    'mohamed_hassan_mohamed_title' => 'Mohamed Hassan Mohamed',
+    'mohamed_hassan_mohamed_subtitle' => 'Occupation: Employee at Sohag University',
+    'mohamed_hassan_mohamed_feature1' => ' Its specialization in teaching trading only, which ensures focus and professionalism.',
+    'mohamed_hassan_mohamed_feature2' => ' Continuous lifetime support for students, even with the latest updates and advancements.',
+    'mohamed_hassan_mohamed_feature3' => ' A long-term vision aimed at taking its students to the highest levels of development in trading and financial markets.',

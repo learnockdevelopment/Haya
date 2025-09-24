@@ -328,6 +328,15 @@ export const translations = {
     'contact.messageSent': 'Message sent successfully!',
     'contact.messageFailed': 'Failed to send message. Please try again.',
     
+    // Services Page
+    'service.title_hero_hotel': ' your next destination',
+    'service.subtitle_hero_hotel': 'Find Your Perfect Stay Anywhere',
+    'service.main_title_hero_hotel': 'From luxury resorts to budget-friendly hotels, we make booking simple, fast, and secure.',
+'service.title_hero_visa': ' Apply for Your Visa Easily – Fast, Reliable, and Hassle-Free',
+    'service.subtitle_hero_visa': 'Find Your Perfect Stay Anywhere',
+    'service.main_title_hero_visa': 'Get your visa approved quickly with Haya Travel Services. Expert guidance, competitive prices, and Arabic-speaking support for Sudanese travelers.',
+
+
     // Footer
     'footer.quickLinks': 'Quick Links',
     'footer.support': 'Support',
